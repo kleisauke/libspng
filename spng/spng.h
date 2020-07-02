@@ -6,8 +6,10 @@
 extern "C" {
 #endif
 
-#if defined(_MSC_VER) || defined(__MINGW32__) || defined(__CYGWIN__)
-    #ifndef SPNG_STATIC
+/* Define SPNG_STATIC to link statically */
+#if (defined(_WIN32) || defined(__CYGWIN__)) && !defined(SPNG_STATIC)
+    /* Export when producing library, import when linking against library */
+    #ifdef SPNG_COMPILATION
         #define SPNG_API __declspec(dllexport)
     #else
         #define SPNG_API __declspec(dllimport)

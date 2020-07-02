@@ -1,4 +1,5 @@
 /* SPDX-License-Identifier: (BSD-2-Clause AND libpng-2.0) */
+#define SPNG_COMPILATION
 #include "spng.h"
 
 #include <limits.h>
